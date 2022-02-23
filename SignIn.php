@@ -13,7 +13,7 @@
               <div id="main-div" style="background-image: url(img/slideshow3.jpg);">
                 <div class="login-div" >
           
-                <form  class="aa " style="height:470px" name="myform" method="POST" action="login.php" onsubmit="return validateform()" >  
+                <form  class="aa " style="height:470px" name="myform" method="POST" action="SignIn.php" onsubmit="return validateform()" >  
     
               <h1 >Sign in form</h1>
               <input type="name" class="inputi" name="name"placeholder="Enter name">
@@ -27,12 +27,7 @@
               <input type="submit" name="butoniS" class="inputi" id="a1" >
               <br>
                
-                  <?php
-        include 'FormValidation.php';
-       // $formV=new FormValidation();
-      //  $formV->validoEmail();
-       // $formV->validoEmail();
-?>
+
             </form>  
 
             <?php 
@@ -44,7 +39,17 @@
         <script src="main.js"></script>
     </body>
 </html>
+<?php
+    require_once 'FormValidation.php';
 
+    $forma = new FormValidation();
+    if(isset($_POST['email1']) && isset($_POST['password1'])){
+        $forma->validoEmail();
+        $forma->validoPass();
+    }else{
+      header('loaction:projekti.php');
+    }
+?>
 
 
 

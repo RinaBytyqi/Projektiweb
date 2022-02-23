@@ -31,22 +31,26 @@ if(isset($_SESSION['email'])){
               <input type="submit" name="butoniLogIn" class="inputi" id="a1" >
               <br>
                   <a href='SignIn.php'>Don't have an account? Sign in </a>
-                  <?php
-           include_once 'FormValidation.php';
-?>
             </form>  
 
-            <?php 
-    require_once 'Log-in-Validimi.php';
-    ?>
+
           </div>
         </div>
-        <?php
-
-?>
+        
         <script src="main.js"></script>
     </body>
 </html>
 <?php
+
 }
+
+include_once 'FormValidation.php';
+$forma = new FormValidation();
+if(isset($_POST['email']) && isset($_POST['password'])){
+    $forma->validoEmail();
+    $forma->validoPass();
+}else{
+  header('loaction:projekti.php');
+}
+require_once 'Log-in-Validimi.php';
 ?>

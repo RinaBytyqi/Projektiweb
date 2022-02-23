@@ -21,7 +21,7 @@ function visitPage(){
   var w = window.open('login.php');      
     }
 
- /*   function validateform(){  
+   function validateform(){  
       var email=document.myform.name.value;  
       var password=document.myform.password.value;  
         
@@ -34,7 +34,7 @@ function visitPage(){
         }  else{
           alert("You are registred!");
         }
-      }*/
+      }
     
 
     document.getElementsByName("password").pattern = "^([A-Z][a-z]+)\d{3}$";

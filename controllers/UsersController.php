@@ -5,7 +5,7 @@ class UserController{
   public $db;
 
   public function _construct(){
-      $this->db=new DataBase;
+      $this->db=new Database();
   }
 
 

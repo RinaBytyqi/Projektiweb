@@ -1,0 +1,22 @@
+<?php
+require_once '../controllers/produktetController.php';
+$prod=new ProsuktetController();
+if(isset($_POST['submit'])){
+    $prod->insert($_POST);
+}
+
+?>
+<div>
+<form method='Post'>
+Emri:
+
+<input type='text' name='emri'>
+<br>
+<input type='text' name='pershkrimi'>
+<br>
+<input type='number' name='qmimi'>
+<br>
+<input type='submit' name='submit' values='save'>
+
+</form>
+</div>

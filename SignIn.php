@@ -1,4 +1,13 @@
+<?php
+include_once 'controllers/UserController.php';
 
+$user = new UserController();
+if(isset($_POST['butoniS'])){
+    $user->insert($_POST);
+    echo
+    "<script> alert ('Te dhenat jane regjistruar me sukses!');</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>    <meta charset="utf-8">
@@ -18,9 +27,9 @@
               <h1 >Sign in form</h1>
               <input type="name" class="inputi" name="name"placeholder="Enter name">
               <br>
-              <input type="email" class="inputi" name="email1"placeholder="Enter e-mail">
+              <input type="email" class="inputi" name="emailS"placeholder="Enter e-mail">
               <br>
-              <input type="password" class="inputi " name="password1" placeholder="Enter password">
+              <input type="password" class="inputi " name="passwordS" placeholder="Enter password">
               <br>
               <input type="number" class="inputi " name="number" placeholder="Enter number">
               <br>

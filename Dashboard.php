@@ -4,6 +4,14 @@ $tdhena=new ProduktController();
 $data=$tdhena->readData();
 
 
+session_start();
+if(!isset($_SESSION['username'])){
+ header("location:login.php");
+}else{
+ if($_SESSION['role'] != "admin"){
+    header("location:home.php");
+ }
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -61,3 +69,6 @@ include_once 'footer.php';
 ?>
 </body>
 </html>
+<?php
+}
+?>

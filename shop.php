@@ -1,12 +1,12 @@
 <?php
 //$hide="";
-session_start();
+/*session_start();
 if(isset($_SESSION['email'])){
   header("location:login.php");
   //$hide = "hide";
 }else{
  //    $hide = "";
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -393,5 +393,5 @@ include 'footer.php';
     </body>
 </html>
 <?php
- }
+// }
  ?>

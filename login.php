@@ -1,8 +1,11 @@
 <?php 
+include_once 'login-validimi.php';
+$val=new Validimi();
+$val->validimi();
 
-session_start();
-if(isset($_SESSION['email'])){
- header("location:shop.php");
+//session_start();
+if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
+ header("location:projekti.php");
 }else{
 
 ?>
@@ -44,13 +47,12 @@ if(isset($_SESSION['email'])){
 
 }
 
-include_once 'FormValidation.php';
+/*include_once 'FormValidation.php';
 $forma = new FormValidation();
 if(isset($_POST['email']) && isset($_POST['password'])){
     $forma->validoEmail();
     $forma->validoPass();
 }else{
   header('loaction:projekti.php');
-}
-require_once 'Log-in-Validimi.php';
+}*/
 ?>

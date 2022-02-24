@@ -1,9 +1,30 @@
+<?php
+include_once 'login-validimi.php';
+$val=new Validimi();
+$val->validimi();
+
+$hide="";
+//session_start();
+  if(!isset($_SESSION['email'])){
+    header("location:login.php");
+  }else{
+     if($_SESSION['roli'] == "admin"){
+        $hide = "";
+  }else{
+    $hide = "hide";
+ }
+?>
+
+
 <html>
     <head>
         <style>
              .footer-dark .item.social > a {
            padding-top: 7px;
             }
+            .hide{
+            display:none;
+        }
         </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,3 +177,6 @@ include_once 'footer.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+<?php
+}
+?>

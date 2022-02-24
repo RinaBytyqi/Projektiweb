@@ -31,6 +31,8 @@
          <a href="projekti.php" class="linkat  ">HOME</a> &nbsp;&nbsp; 
           <a href="shop.php" class="linkat <?php echo $hide ?>"> SHOP</a> &nbsp; &nbsp; 
           <a href="Concerns.php" class="linkat "> CONCERNS</a>&nbsp; &nbsp;
+          <a href="Dashnoard.php" class="linkat <?php echo $hide ?>"> DASHBOARD</a>&nbsp; &nbsp;
+
           </p>
 
           <script src="main.js"></script>

@@ -15,9 +15,37 @@
 <?php
 include_once 'header.php';
 ?>
-<div>
-
-</div>
+<link rel="stylesheet" href ="css/displayStyle.css" />
+        <title>Shfaq dhenat</title>
+    </head>
+    <body>
+        <div id="a1">
+            <header>
+                <h3>Ju lutem shtype per te regjistruar te dhenat ne Sistem</h3>
+                <a href="insert.php"><Button id='r'>Regjistrohu</Button></a>
+            </header>
+            <table>
+            <hr>
+            <p>Lista e te dhenave:</p>
+                    <tr>
+                        <th>Emri</th>
+                        <th>Mbiemri</th>
+                        <th>Departamenti</th>
+                        <th>Adresa</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                      
+                        <td><?php echo $value['emri']?></td>
+                        <td><?php echo $value['pershkrimi']?></td>
+                        <td><?php echo $value['foto']?></td>
+                        <td><?php echo $value['qmimi']?></td>
+                        <td id='de'><a href=""><button id="d">DELETE</button></a>
+                           <a  href=""><button id='e'>EDIT</button></td></a>
+                    </tr>
+                  
+            </table>
+        </div>
 <?php
 include_once 'footer.php';
 ?>

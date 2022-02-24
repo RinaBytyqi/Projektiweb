@@ -18,7 +18,7 @@ class Validimi{
           if(empty($_POST['email']) || empty($_POST['password'])){
                echo "Fill all fields!";
     }else{
-        $sql = "SELECT roli, email, password  FROM users";
+        $sql = "SELECT  email, password, roli  FROM users";
         $result = $this->db->pdo->query($sql);
         
         while ($row = $result->fetchAll()){

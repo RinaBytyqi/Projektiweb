@@ -4,7 +4,7 @@ $val=new Validimi();
 $val->validimi();
 
 //session_start();
-if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
+if(!isset($_SESSION['email']) ){
  header("location:projekti.php");
 }else{
 

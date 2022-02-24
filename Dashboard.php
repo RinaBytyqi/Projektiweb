@@ -3,6 +3,7 @@ include_once 'controllers/ProduktController.php';
 $tdhena=new ProduktController();
 $data=$tdhena->readData();
 
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,8 +48,8 @@ include_once 'header.php';
                         <td><?php echo $value['pershkrimi']?></td><br>
                         <td><?php echo $value['foto']?></td><br>
                         <td><?php echo $value['qmimi']?></td><br>
-                        <td id='de'><a  href="delete.php?id=<?php echo $value['id']?>"><button id="d">DELETE</button></a>
-                           <a  href="edit.php"><button id='e'>EDIT</button></td></a>
+                        <td id='de'><a href="delete.php?id=<?php echo $value['id']; ?>"><button name="delete" id="d">DELETE</button></a>
+                        <a href="edit.php?id=<?php echo $value['id']; ?>"><button  id='e'>EDIT</button></td></a>
                     </tr>
                   <?php 
                   }

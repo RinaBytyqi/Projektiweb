@@ -1,4 +1,9 @@
+<?php
+include_once 'controllers/ProduktController.php';
+$tdhena=new ProduktController();
+$data=$tdhena->readData();
 
+?>
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -29,21 +34,25 @@ include_once 'header.php';
             <p>Lista e te dhenave:</p>
                     <tr>
                         <th>Emri</th>
-                        <th>Mbiemri</th>
-                        <th>Departamenti</th>
-                        <th>Adresa</th>
+                        <th>Pershkrimi</th>
+                        <th>Foto</th>
+                        <th>Qmimi</th>
                         <th>Action</th>
                     </tr>
                     <tr>
-                      
-                        <td><?php echo $value['emri']?></td>
-                        <td><?php echo $value['pershkrimi']?></td>
-                        <td><?php echo $value['foto']?></td>
-                        <td><?php echo $value['qmimi']?></td>
-                        <td id='de'><a href=""><button id="d">DELETE</button></a>
-                           <a  href=""><button id='e'>EDIT</button></td></a>
+                      <?php
+                      foreach((array)$data as $key=>$value){
+                        ?>
+                        <td><?php echo $value['emri']?></td><BR>
+                        <td><?php echo $value['pershkrimi']?></td><br>
+                        <td><?php echo $value['foto']?></td><br>
+                        <td><?php echo $value['qmimi']?></td><br>
+                        <td id='de'><a  href="delete.php?id=<?php echo $value['id']?>"><button id="d">DELETE</button></a>
+                           <a  href="edit.php"><button id='e'>EDIT</button></td></a>
                     </tr>
-                  
+                  <?php 
+                  }
+                  ?>
             </table>
         </div>
 <?php

@@ -1,3 +1,17 @@
+<?php
+include_once 'controllers/ProduktController.php';
+if(isset($_POST['save'])){
+     
+    $insertimi=new ProduktController();
+    $insertimi->setEmri($_POST['emri']);
+    $insertimi->setPershkrimi($_POST['pershkrimi']);
+    $insertimi->setFoto($_POST['foto']);
+    $insertimi->setQmimi($_POST['qmimi']);
+
+    $insertimi->insert($_POST);
+}
+
+?>
 <!DOCTYPE html>
 <htm>
     <head>
@@ -13,7 +27,7 @@
                 <label>Pershkrimi</label>
                 <input type="text" class="inp" name="pershkrimi" placeholder="shto pershkrimin..."/>
                 <label>Foto</label>
-                <input type="text" class="inp" name="foto" placeholder="shto foton..."/>
+                <input type="file" class="inp" name="foto" placeholder="shto foton..."/>
                 <label>Qmimi</label>
                 <input type="text" class="inp" name="qmimi" placeholder="shto qmimin"/>
                 <button name='save'>RUAJ</button>

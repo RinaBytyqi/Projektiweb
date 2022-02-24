@@ -1,9 +1,9 @@
 <?php
 
-require_once('controllers/ProduktController.php');
+require_once 'controllers/ProduktController.php';
 $prod= new ProduktController();
 $myId=$_GET['id'];
-$record=$prod->lexoDhenatSipasIDs($myId);
+$record=$prod->readData();
 
  if (isset($_POST['edit'])){
      if ($myId==$dhenat->getId()){

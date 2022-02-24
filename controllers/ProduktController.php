@@ -1,19 +1,63 @@
 <?php
-include '../config/database.php';
+include 'config/database.php';
 
-class ProduktController{
+class ProduktController  {
   public $db;
+  private $emri;
+  private $pershkrimi;
+  private $foto;
+  private $qmimi;
+  private $id;
 
-  public function __construct(){
+  public function __construct($id='', $emri='',
+  $pershkrimi='', $foto='', $qmimi='')
+  {
+  $this->id=$id;
+  $this->emri=$emri;
+  $this->pershkrimi=$pershkrimi;
+  $this->foto=$foto;
+  $this->qmimi=$qmimi;
       $this->db=new Database();
   }
 
-  //crud
+
+public function getID(){
+  return $this->id;
+}
+public function setID($id){
+  $this->id=$id;
+}
+public function getEmri(){
+  return $this->emri;
+}
+
+public function setEmri($emri){
+  $this->emri=$emri;
+}
+
+public function getPershkrimi(){
+  return  $this->pershkrimi;
+}
+public function setPershkrimi($pershkrimi){
+  $this->pershkrimi=$pershkrimi;
+}
+public function getFoto(){
+  return  $this->foto;
+}
+public function setFoto($foto){
+  $this->foto=$foto;
+}
+public function setQmimi($qmimi){
+  $this->qmimi=$qmimi;
+}
+public function getQmimi(){
+  return  $this->qmimi;
+}
 
   public function readData(){
-      $query=$this->db->pdo->query('SELECT * from produktet');
+    $query = $this->db->pdo->query('SELECT emri,pershkrimi,foto,qmimi from produktet');
 
-      $query->fetchObject();
+    return $query->fetchAll();
   }
 
   public function insert($request){
@@ -46,7 +90,7 @@ $query->execute();
 return $query->fetch();
 
 }
-public function update($request,$id){
+/*public function update($request,$id){
    $query=$this->db->pdo->prepare('UPDATE produktet set emri=:emri,pershkrimi=:pershkrimi,
    qmimi=:qmimi where id=:id');
 
@@ -60,6 +104,12 @@ public function update($request,$id){
 return header('Location: projekti.php');
 
 
+}*/
+public function updateDhenat(){
+  $sql='UPDATE Studenti SET emri=?, mbiemri=?, departamenti=?, adresa=? where id=?';
+
+  $stm=$this->dbconn->prepare($sql);
+  $stm->execute([$this->emri, $this->mbiemri,$this->departamenti,$this->adresa, $this->id]);
 }
 
 public function  delete($id){

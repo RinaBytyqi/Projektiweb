@@ -1,3 +1,29 @@
+<?php
+
+require_once 'controllers/ProduktController.php';
+$prod= new ProduktController();
+$myId=$_GET['id'];
+$record=$prod->readData($myId);
+
+ if (isset($_POST['edit'])){
+     if ($myId==$dhenat->getID()){
+
+          $dhenat->setEmri($_POST['emri']);
+          $dhenat->setPershkrimi($_POST['pershkrimi']);
+          $dhenat->setFoto($_POST['foto']);
+          $dhenat->setQmimi($_POST['qmimi']);
+
+         echo $dhenat->update();
+    echo 
+    "<script>
+        alert('dhenat jane PERDITSUAR me sukses');
+        document.location='displayDhenat.php'
+    </script>";
+     }
+ }
+  
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,15 +37,15 @@
                 <label>Emri</label>
                 <input type="text" class="inp" name="emri"
                     value ="<?php echo $records['emri'];?> "/>
-                <label>Mbiemri</label>
-                <input type="text" class="inp" name="mbiemri"
-                    value ="<?php echo $records['mbiemri'];?> "/>
-                <label>Departementi</label>
-                <input type="text" class="inp" name="departamenti"
-                    value ="<?php echo $records['departamenti'];?> "/>
-                <label>Adresa</label>
-                <input type="text" class="inp" name="adresa"
-                     value ="<?php echo $records['adresa'];?> "/>
+                <label>Pershkrimi</label>
+                <input type="text" class="inp" name="pershkrimi"
+                    value ="<?php echo $records['pershkrimi'];?> "/>
+                <label>Foto</label>
+                <input type="text" class="inp" name="foto"
+                    value ="<?php echo $records['foto'];?> "/>
+                <label>Qmimi</label>
+                <input type="text" class="inp" name="qmimi"
+                     value ="<?php echo $records['qmimi'];?> "/>
                 <button name='edit'>RUAJ</button>
             </form>
         </div>

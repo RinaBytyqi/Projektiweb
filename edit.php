@@ -27,37 +27,45 @@ if(isset($_GET['id'])){
 
 <!DOCTYPE html>
 <html>
-    <head> <meta charset="utf-8">
+    <head>     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/shopstyle.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/projectstyle.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href ="css/insertStyle.css"/>
         <title>Edit</title>
     </head>
     <body>
     <?php
 include_once 'header.php';
 ?>
+   <center>
+            <h3 style="color:white; margin-top:1%"> ADD PRODUCT </h3>
         <div id="formulari">
-        <h3>Shto te dhenat ne Formularin e Regjistrimit</h3>
             <form action='' method="POST">
-                <label>Emri</label>
-                <input type="text" class="inp" name="emri"
-                    value="<?php echo $currentID['emri']; ?>">
-                <label>Pershkrimi</label>
-                <input type="text" class="inp" name="pershkrimi"
-                    value ="<?php echo $currentID['pershkrimi'];?> ">
-                <label>Foto</label>
-                <input type="file" class="inp" name="foto"
-                    value ="<?php echo $currentID['foto'];?> ">
-                <label>Qmimi</label>
-                <input type="text" class="inp" name="qmimi"
-                     value ="<?php echo $currentID['qmimi'];?> ">
-                <button name='edit'>EDIT</button>
+                <label id="product">Product title</label>
+                <input type="text" id="inp" name="emri" placeholder="Type here" value="<?php echo $currentID['emri']; ?>">
+                <label>Description</label>
+                 <input name="pershkrimi"  placeholder="Type here"  value ="<?php echo $currentID['pershkrimi'];?>">
+                
+                <label>Image</label>
+                <div class="fotoDiv">
+                <input type="file" id="fotoInput" name="foto" multiple value ="<?php echo $currentID['foto'];?> ">
+                <p id="fotoParagh">
+                <i class="fa fa-picture-o fa-5x" aria-hidden="true" style="font-size:40pt"></i>
+                </p>
+                </div>
+                <label id="pricelabel">Price</label>
+                <div class="priceDiv">
+                <input id="price"  id="inp" name="qmimi" placeholder="Type here"    value ="<?php echo $currentID['qmimi'];?>">
+                <input id="euro" type="number" id="inp"  placeholder="EUR" disabled="disabled">
+                </div>
+                <button id="buttonInsert"name='edit'>Edit item</button>
             </form>
         </div>
+</center>
+  
         <?php
 include_once 'footer.php';
 ?>

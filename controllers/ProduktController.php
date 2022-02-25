@@ -61,7 +61,7 @@ public function getQmimi(){
   }
 
   public function insert($request){
-   
+   $request['foto'] ='./img/' .$request['foto'];
      $query=$this->db->pdo->prepare('INSERT INTO produktet(emri,pershkrimi,foto,qmimi)
      values(:emri,:pershkrimi,:foto,:qmimi)');
 
@@ -82,6 +82,8 @@ public function getQmimi(){
 }
 
 public function update($request, $id){
+  $request['foto'] ='./img/' .$request['foto'];
+
     $query = $this->db->pdo->prepare('UPDATE produktet SET emri = :emri,
     pershkrimi = :pershkrimi, foto = :foto, qmimi = :qmimi WHERE id = :id');
     $query->bindParam(':emri', $request['emri']);

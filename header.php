@@ -1,42 +1,34 @@
+<div class="headerdiv">
+        <img src="img/logo.png" id="logostyle">
+        <div class="iconDiv">
+            <button  class="iconbuttons"><i class="fa fa-flag"></i></button>
+            <button class="iconbuttons"><i  class="fa fa-shopping-bag"></i></button>
+            <button class="iconbuttons" ><i class="fa fa-heart"></i></button>
+            <button class="iconbuttons" ><i onclick="visitPage()" class="fa fa-user"></i></button>  
+        </div>
+    <form id="headerForm" method="POST">
+        <input type="search" placeholder="Search" name="search" aria-label="Search through site content" id="inputHeader">
+        <button id="buttonHeader" name='submitS'>
+          <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 
+            36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 
+            312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 
+            408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.
+            364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+        </button>
+    </form>
+  
+    </div>
 
-        <style>
-       /* .hide{
-            display:none;
-        }*/
-    </style>
-      <div id="headerdiv">
-           
-      <form >
-       
-          <div class="searchbardiv">
-          <img src="img/logo.png" id="logostyle">
-          <input type="text" placeholder="SEARCH" id="searchstyle">
-         
-        
-          <button  type="submit" id="searchbutton" ><i  class="fa fa-search"></i></button>
-          <button  id="flag"><i class="fa fa-flag"></i></button>
-          <button class="iconbuttons"><i  class="fa fa-shopping-bag"></i></button>
-          <button class="iconbuttons" ><i class="fa fa-heart"></i></button>
-          <button class="iconbuttons" ><i onclick="visitPage()" class="fa fa-user"></i></button>
-    
-      </div>
-      </form>
-      
-      </div>
-      
-      <div id="slider-div">
-      
           <div class="field ">
            <p class="linkat-p">   
          <a href="projekti.php" class="linkat  ">HOME</a> &nbsp;&nbsp; 
-          <a href="shop.php" class="linkat <?php echo $hide ?>"> SHOP</a> &nbsp; &nbsp; 
+          <a href="shop.php" class="linkat "> SHOP</a> &nbsp; &nbsp; 
           <a href="Concerns.php" class="linkat "> CONCERNS</a>&nbsp; &nbsp;
-          <a href="Dashnoard.php" class="linkat <?php echo $hide ?>"> DASHBOARD</a>&nbsp; &nbsp;
+          <a href="Concerns.php" class="linkat <?php echo $hide ?>"> DASHBOARD</a>&nbsp; &nbsp;
 
           </p>
-
-          <script src="main.js"></script>
+          </div>
+    </div>
+    <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-      </div>
-

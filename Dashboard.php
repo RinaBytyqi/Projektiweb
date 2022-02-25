@@ -1,16 +1,21 @@
 <?php
 include_once 'controllers/ProduktController.php';
+
 $tdhena=new ProduktController();
 $data=$tdhena->readData();
 
+//val
+/*include_once 'login-validimi.php';
+$val=new Validimi();
+$val->validimi();
 
 session_start();
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['email'])){
  header("location:login.php");
 }else{
  if($_SESSION['role'] != "admin"){
-    header("location:home.php");
- }
+    header("location:projekti.php");
+ }*/
 
 ?>
 <!DOCTYPE HTML>
@@ -18,37 +23,34 @@ if(!isset($_SESSION['username'])){
   <head>
   <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/shopstyle.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/projectstyle.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href ="css/insertStyle.css"/>
         <title>Dashboard </title> 
 </head>
-<body>
 <?php
 include_once 'header.php';
 ?>
-<link rel="stylesheet" href ="css/displayStyle.css" />
-        <title>Shfaq dhenat</title>
-    </head>
     <body>
+        <center>
         <div id="a1">
             <header>
-                <h3>Ju lutem shtype per te regjistruar te dhenat ne Sistem</h3>
-                <a href="insert.php"><Button id='r'>Regjistrohu</Button></a>
+                <h3 style="align-text:center">Ju lutem shtype per te regjistruar te dhenat ne Sistem</h3>
+                <a href="insert.php"><Button id='buttonInsert'>Regjistrohu</Button></a>
             </header>
-            <table>
+            <table class="tabela">
             <hr>
-            <p>Lista e te dhenave:</p>
-                    <tr>
+            <p >Lista e te dhenave:</p>
+                    <tr class="tabelaROW">
                         <th>Emri</th>
                         <th>Pershkrimi</th>
                         <th>Foto</th>
                         <th>Qmimi</th>
                         <th>Action</th>
                     </tr>
-                    <tr>
+                    <tr class="tabelaROW">
                       <?php
                       foreach((array)$data as $key=>$value){
                         ?>
@@ -64,11 +66,12 @@ include_once 'header.php';
                   ?>
             </table>
         </div>
+                </  center>
 <?php
 include_once 'footer.php';
 ?>
 </body>
 </html>
 <?php
-}
+//}
 ?>

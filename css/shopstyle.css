@@ -4,25 +4,10 @@ body,html{
 .searchinput{
   margin-top: 8px;
 }
-.headerdiv{
-  background-color: #d7cbd9;
-  height: 160px;
-  background-color:#cecfd1;
-  align-items: center;
-  position: fixed;
-}
 
-.linkat{
-  color:black;
-  letter-spacing: 2px;
-  line-height: 28px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-right: 3%;
-}
 .flex-container {
     display: flex;
- height:660px;
+ height:600px;
 }
 .flex-child {
   flex: 1;
@@ -78,7 +63,8 @@ position: absolute;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-form{
+#buttonForm{
+  
 background-color: #d7cbd9;
 }
 #logostyle{
@@ -141,8 +127,8 @@ background-color: #d7cbd9;
     margin-left:8%;
     margin-right: 8%;
     background-color: white;
-    height: 3500px;
-    margin-bottom:2%;
+    height: 600px;
+    margin-bottom:1%;
     }
 
 .introShop{
@@ -186,10 +172,10 @@ background-color: #d7cbd9;
         flex-direction: row;
         justify-content: space-evenly;
         min-height: 100px;
-        margin-left: 20px;
+        margin-left: 100px;
         flex-wrap: wrap;
-        margin-top: 5%;
-        margin-bottom: 45px;
+        margin-top: 30%;
+        margin-bottom: 65px;
 }
 
 .divforProduct{
@@ -199,7 +185,8 @@ background-color: #d7cbd9;
     justify-content: center;
     border: 1px solid #d6d6d6;
     border-top: none;
-    margin-bottom: 30px;
+    margin-bottom: 150px;
+    margin-right:100px;
   }
 
   .picture{
@@ -243,7 +230,7 @@ background-color: #d7cbd9;
 
 
   .footer-dark {
-    padding:50px 0;
+    padding:40px 0;
     color:#f0f9ff;
     background-color:#282d32;
   }
